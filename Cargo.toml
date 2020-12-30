@@ -1,0 +1,20 @@
+[package]
+name = "tiny_embed"
+version = "0.1.0"
+authors = ["Todd Stellanova <tstellanova@users.noreply.github.com>"]
+edition = "2018"
+
+[dependencies]
+cortex-m = "0.6.3"
+cortex-m-rt = "0.6.12"
+nrf52840-hal = {version="0.11.0", features = ["rt"]}
+embedded-hal = {version="0.2.3", features = ["unproven"] }
+
+[lib]
+name = "mylib"
+path = "src/lib.rs"
+crate-type = ["staticlib"]
+
+[[bin]]
+name = "mybin"
+path = "src/main.rs"
